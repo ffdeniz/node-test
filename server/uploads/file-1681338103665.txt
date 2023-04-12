@@ -1,0 +1,530 @@
+From: Eric Olsen <eric@aerialthermalimaging.com>
+Date: Monday, January 9, 2023 at 3:12 PM
+To: Deniz Berk Ozgoren <deniz@freeflysystems.com>, Matt Isenbarger <Matt@freeflysystems.com>, Maxwell Tubman <maxwell.tubman@freeflysystems.com>
+Cc: Will Peale <Will@aerialthermalimaging.com>
+Subject: Help with Gremsy on the Astro
+
+Hello Freefly team, I hope you are all well. 
+ 
+Back in August I made a visit to show you the progress we made on the OGI Astro integration. Since then, we've uncovered a few issues that you don't know about and we'd love some assistance please. The main issue we need help with causes a pan wobble and is software related. When we shared this info with Gremsy last Thursday, they confirmed the issue and asked for help integrating the Pixy on the Astro.
+ 
+Will on my team has some questions regarding Auterion images. Is there a technical person at FF that can help us with this? Should I open a ticket?
+ 
+By a very long shot, this gimbal issue has been the hardest part of the integration and consumed the most time. We would love speedy assistance please. 
+ 
+Endless thanks, 
+Eric 
+ 
+ 
+Will Peale January 9, 2023 at 3:28 PM
+Following up with some more background: We're working on a patch for the PX4 gimbal driver to make the Pixy a little more usable. I understand you guys are running a custom build of AuterionOS (and AEPX4 as well I'd assume). It looks like we need a development version of your AOS image to flash PX4, so getting that (or some other way to get ssh access to skynode) is high priority. We were planning to start testing this with upstream PX4, but if that is not compatible with the Astro it would be awesome if you guys could share your FF specific PX4 sources as well. 
+
+Sorry if this is a big ask... this gimbal issue is just becoming a huge blocker for us.
+
+Thanks,
+-Will
+
+Matt Isenbarger January 9, 2023 at 3:40 PM
+Hi Will,
+ 
+“some other way to get ssh access to Skynode”
+Can you give more context about this option?
+ 
+ 
+“share your FF specific PX4 sources”
+We cannot provide source code for our version of PX4. I can let you know which public version we are closest to when you’re ready to test. If you want to send us the patch you’re working on we can test it and see what we’d need to do to enable your request.
+ 
+Thanks,
+Matt
+ 
+From: Will Peale <will@aerialthermalimaging.com>
+Date: Monday, January 9, 2023 at 3:28 PM
+To: Matt Isenbarger <Matt@freeflysystems.com>
+Cc: Eric Olsen <eric@aerialthermalimaging.com>, Deniz Berk Ozgoren <deniz@freeflysystems.com>, Maxwell Tubman <maxwell.tubman@freeflysystems.com>, Support <support@freeflysystems.com>
+Subject: Re: Help with Gremsy on the Astro
+
+Following up with some more background: We're working on a patch for the PX4 gimbal driver to make the Pixy a little more usable. I understand you guys are running a custom build of AuterionOS (and AEPX4 as well I'd assume). It looks like we need a development version of your AOS image to flash PX4, so getting that (or some other way to get ssh access to skynode) is high priority. We were planning to start testing this with upstream PX4, but if that is not compatible with the Astro it would be awesome if you guys could share your FF specific PX4 sources as well. 
+
+Sorry if this is a big ask... this gimbal issue is just becoming a huge blocker for us.
+
+Thanks,
+-Will
+ 
+On Mon, Jan 9, 2023 at 3:26 PM Matt Isenbarger <Matt@freeflysystems.com> wrote:
+Will Peale January 9, 2023 at 4:04 PM
+For sure. We're just trying to flash a custom PX4 build onto the Astro. As per the Auterion docs (https://docs.auterion.com/development/auterion-developer-tools/flight-controller-firmware) and in our testing this seems to require SSH access to the skynode unit onboard the aircraft (if you know another way happy to try that as well). Otherwise it seems like there are two ways we could get SSH access: flashing a development AuterionOS image with default user/pass SSH access enabled, or you guys provide us with an SSH key (or another form of access) that works with your production build. I assumed the latter would not be preferable for you guys. If there are any other ways to do this you can think of though, let us know!
+
+Re: PX4 sources, no worries I expected as much. We would definitely appreciate the nearest public version, but it sounds like there shouldn't be any critical features missing (insofar as to support basic gimbal, flight tests)? In general, we would definitely love to collaborate with you guys on getting this gimbal working as much as possible. To that end if you have any development/testing documentation and experience you can share that would be much appreciated as well.
+
+Thanks,
+-Will  
+
+Matt Isenbarger January 9, 2023 at 4:51 PM
+I'll reach out to Auterion and get back to you in the AM.
+Best Regards,
+
+Matt Isenbarger
+CEO, Drones
+FREEFLY SYSTEMS
+
+(425) 485-5500
+
+Eric Olsen January 10, 2023 at 7:10 PM
+Hello Matt, I hope you are well. 
+
+Still enjoying the NW? How is your kid doing?
+
+Nice video of you and Auterion that was just released. Did you hear anything back from them about the software problem we need to correct for the Pixy to be useful on the Astro? 
+
+Matt Isenbarger January 10, 2023 at 8:15 PM
+Hi Eric,
+
+We got a vague response from Claudio. I’ll continue to push, we have to figure this out.
+Best Regards,
+
+Matt Isenbarger
+CEO, Drones
+FREEFLY SYSTEMS
+
+(425) 485-5500
+
+Eric Olsen January 11, 2023 at 7:12 AM
+Thank you Matt. 
+
+We've also been in contact with Claudio. Please let us know if there is anything we can do to assist. 
+
+Thanks, 
+Eric
+
+Matt Isenbarger January 12, 2023 at 3:20 PM
+Hi Eric,
+ 
+Nothing new. Please continue to push on Claudio from your end too.
+Best Regards,
+
+Matt Isenbarger
+CEO, Drones
+FREEFLY SYSTEMS
+
+(425) 485-5500
+
+Eric Olsen January 12, 2023 at 10:09 PM
+Thanks for the update, Matt. 
+
+Will do. 
+
+Matt Isenbarger January 23, 2023 at 12:03 PM
+Hi Eric,
+ 
+Just checking in to see if you've been able to make any progress with Claudio/Auterion?
+ 
+Best Regards,
+
+Matt Isenbarger
+CEO, Drones
+FREEFLY SYSTEMS
+
+(425) 485-5500
+
+Eric Olsen January 24, 2023 at 10:05 AM
+Hello Matt, 
+
+We received an email from him, he is gathering insite from his team regarding PE series gimbals. He seems to have insights that might be valuable. 
+
+He mentioned his team is in crunch with a new Auterion release, and said my email fell through the cracks. Maybe there is a valuable update. I'll ping him today for a follow up. 
+
+Has anything changed on your end? The gimbal that you use for the mapping payload, could we use it for our OGI payload?
+
+Thanks!
+
+Matt Isenbarger January 24, 2023 at 12:03 PM
+Hey Eric,
+ 
+Disappointed to hear there isn't a clear resolution yet. I know our engineering team is putting pressure on them to improve this as well.
+ 
+We are working through an Astro firmware release that was planned for this week but looks like it's pushed until mid Feb now, I'm not sure if that unlocks anything regarding your challenges specifically around the integration issues.
+ 
+I'd like us to do an "open" gimbal using similar components to the ones used in our Astro mapping gimbal but we don't have any timeline for this on our roadmap at the moment.
+ 
+ 
+Best Regards,
+
+Matt Isenbarger
+CEO, Drones
+FREEFLY SYSTEMS
+
+(425) 485-5500
+
+Eric Olsen January 24, 2023 at 1:12 PM
+We're disappointed too, Matt. This whole gimbal issue has been the most costly issue we've had to deal with. 
+
+I'm considering taking an Astro to Gremsy in Vietnam. Would FreeFly be willing to help us out with that effort? 
+
+
+Matt Isenbarger January 24, 2023 at 5:21 PM
+Hey Eric,
+ 
+Great to connect today, sorry you're still having issues. Please do send over all Astro flight logs that had "excessive drift" and let me know if you're able to send me some hardware to help diagnose your issue with the PE gimbal.
+ 
+Best Regards,
+
+Matt Isenbarger
+CEO, Drones
+FREEFLY SYSTEMS
+
+(425) 485-5500
+
+Will Peale January 25, 2023 at 6:50 PM
+Hey Matt, 
+
+Passing along some logs and media for this issue. 
+
+This video was shot today on a camera mounted to a dummy payload (steel assembly mimicking the MOI of the actual payload). The video is cropped to the center 1/4 of the original picture to be a little closer to the Ventus FOV and better illustrate the pan issue (pan not staying locked when hands are off the sticks). https://streamable.com/epkqjf
+
+The video is about 2 minutes into the flight in the attached log. 
+
+The Pixy in question is using bleeding-edge firmware provided by Gremsy. Firmware was, in theory, supposed to improve tracking performance. Gimbal was tuned and setup exactly to Gremsy recommendations. 
+
+Let me know if you have any questions or other test scenarios you and your team would like to see.
+
+Thanks,
+-Will
+
+Matt Isenbarger January 26, 2023 at 4:04 PM
+Hi Eric,
+ 
+I've just shared this with our engineers. I've also purchased a Pixy PE to try to help figure out what the issue is and how we can fix it.
+ 
+Best Regards,
+
+Matt Isenbarger
+CEO, Drones
+FREEFLY SYSTEMS
+
+(425) 485-5500
+
+Eric Olsen January 26, 2023 at 4:16 PM
+You're awesome, Matt!
+
+We're working on it here too. Please let us know if you find anything. 
+
+Sent from my phone, please excuse the brevity as well as any typographical errors.
+
+aerialthermalimaging.com
+
+Will Peale January 26, 2023 at 6:28 PM
+Here is a bit more context for you guys:
+
+This https://streamable.com/8gtvby is a complete flight where we change into Locked mode (aka earth-frame gimbal setpoint) halfway through. The locked portion of the footage is closer to the kind of stabilization we need for our shots. 
+
+Currently, we are using locked mode as a workaround to get acceptable performance out of the platform. We have added controls to lock and unlock the gimbal from our GCS software when we want to get a stabilized shot of something. There are still some issues with this method (absolute angle issues, partially addressed in the alpha Gremsy firmware we are using) but most of all it is just a pain for the operator to have to switch modes all the time. Ideally the Follow mode would just perform as well as Locked mode when hands are off the sticks (and fwiw Gremsy claims Follow should match Locked mode performance). 
+
+Relevant log for the flight is attached as well.
+
+Hope this helps!
+
+-Will
+
+
+Matt Isenbarger January 27, 2023 at 1:46 PM
+Hey Will/Eric,
+ 
+Please send me a list of any changes you've made from default settings on the Astro or Gremsy PE. I also need the updated firmware for the Gremsy you mentioned. Please send me step by step instructions on what you're doing with the Astro, Gremsy, Herelink, etc. so my engineers can replicate your exact issue here and solve it more quickly.
+ 
+Thank you,
+Best Regards,
+
+Matt Isenbarger
+CEO, Drones
+FREEFLY SYSTEMS
+
+(425) 485-5500
+
+Will Peale January 27, 2023 at 3:22 PM
+It should be pretty easy to replicate the behavior. The new Gremsy firmware is super buggy, hard to set up, and doesn't effect the pan wobble issue. I would reccomend not using it while debugging to not confuse things. 
+
+Generally there is a ton of good info in the Gremsy skype chat. Reccomend anyone starting to work on this debug read through there for context.
+
+For gimbal setup, first make some kind of dummy payload. We just use some metal tacked together to roughly match the MOIs of our payload with a mount for a gopro on the front to shoot test footage. Doesn't have to exactly match to replicate the issue, but there needs to be at least some rotational inertia on all axes or the gimbal doesnt function properly (per Gremsy). Photo attached of example dummy load.
+
+It is also VERY important to use a freefly cable AND freefly pe hub to connect the gimbal to the astro.
+
+Gimbal should be balanced and tuned according to Gremsy manual. 
+
+Set the following PX4 params:
+MAV_2_CONFIG = 401 (PPB)
+MAV_2_MODE = 10 (Gimbal)
+SER_PPB_BAUD = 115200
+MAV_2_FORWARD = 1
+MAV_S_FORWARD = 1
+MNT_MODE_IN = 0 Auto
+MNT_MODE_OUT = 2 (MAVLink Gimbal v2)
+
+The scroll wheel on the herelink can also be set to control the tilt if desired for testing. 
+
+At this point, when powered on the gimbal should have a purple light signifying communication with the autopilot. If so, the oscillation shouldl appear when the aircraft is in the air.
+
+This is a lot, feel free to reach out with any questions you guys have during setup.
+
+-Will
+
+Get Outlook for Android
+Matt Isenbarger January 30, 2023 at 2:51 PM
+Copy, thanks Will
+Best Regards,
+
+Matt Isenbarger
+CEO, Drones
+FREEFLY SYSTEMS
+
+(425) 485-5500
+
+Eric Olsen January 30, 2023 at 6:57 PM
+Matt, here is the Skype chat that Will referred to: 
+https://join.skype.com/invite/lzkWYJSrbfes
+
+
+
+Matt Isenbarger January 31, 2023 at 2:25 PM
+Hey Eric - that link is just taking me to Skype but not showing me the conversation you referred to with Gremsy.
+ 
+Best Regards,
+
+Matt Isenbarger
+CEO, Drones
+FREEFLY SYSTEMS
+
+(425) 485-5500
+
+Eric Olsen February 1, 2023 at 2:19 PM
+Hi Matt, I added you. 
+
+Thanks for looking into it. 
+
+Matt Isenbarger February 1, 2023 at 3:47 PM
+Hey Eric,
+ 
+We're in the Skype channel with Gremsy now, thank you. The Gremsy PE that our NJ team sent us in WA isn't working (blue light on PE turns on but gimbal doesn't move/stabilize) so we're tryin to just get it updated to latest firmware and communicating with Astro as a first step.
+ 
+Best Regards,
+
+Matt Isenbarger
+CEO, Drones
+FREEFLY SYSTEMS
+
+(425) 485-5500
+
+Eric Olsen February 1, 2023 at 4:01 PM
+Hi Matt, 
+
+We had a handful of problems with the PE. I don't recall a blue light being corrected with a firmware update, but one of our PE units came with a bad board from Gremsy with the same symptoms you are experiencing. Also, try swapping out the wiring harnesses because there is for sure a pinout difference between what FF and Gremsy ships. 
+
+Good luck!
+Eric 
+
+Eric Olsen February 8, 2023 at 8:03 AM
+Hello Matt, how are you and the family?  
+
+Any updates on this? Anything we can do to help?
+
+Thanks! 
+Eric 
+
+Matt Isenbarger February 8, 2023 at 8:56 AM
+Hi Eric,
+ 
+The first PE that our NJ office sent will only show the constant blue light on the gimbal but it's not communicating with Astro. I asked the NJ team to send the other PE they have on hand so we could try.
+ 
+Best Regards,
+
+Matt Isenbarger
+CEO, Drones
+FREEFLY SYSTEMS
+
+(425) 485-5500
+
+Eric Olsen March 20, 2023 at 4:45 PM
+Hello Matt, how are you?
+
+Just checking in to see if FF has made progress with the gimbal issue? 
+
+Also, we would love to get the Auterion developer kit. We asked for this a few months ago from FF and Auterion, do you know if it is still available yet? 
+
+Thanks,
+Eric 
+
+Matt Isenbarger March 20, 2023 at 9:11 PM
+Hey Eric,
+
+Nate (FF) is working on the getting the Gremsys we have on hand working this week, neither of our top engineers had any luck after a quick try last week. 
+
+Our next Astro firmware update v2.7 will allow easy developer access and better integration tools. 
+
+For now, Auterion has a way to offer you support directly until we release v2.7 (I’ve copied Auterion in here).
+
+Best Regards,
+
+Matt Isenbarger
+CEO, Drones
+FREEFLY SYSTEMS
+
+(425) 485-5500
+
+Freefly Engineering April 4, 2023 at 8:38 AM
+Hi Eric, 
+ 
+We've done some investigation and finally have the pixy PE working on Astro. To get it to work:
+Make sure to use the Freefly cable and smart dovetail mount. We have confirmed that it doesn't work with the gremsy cable and mount and we have reached out to gremsy to see where the pin mis-match is 
+On the latest gremsy gimbal software version v7.7.1, set the gimbal to mavlink mode, make sure the baud rate of the gimbal is 115200 and that it saves. We have had issues were the gimbal sometimes reports a successful change of baud rate but it doesn't actually change the baud rate, so a few attempts are needed
+On Astro, change the SER_PPB_BAUD parameter to 115200 baud rate. This will allow the gimbal and aircraft to communicate, tilt control should work normally from the herelink wheel.  
+One important thing to note is that Freefly gimbals work only at 912600 baud rate, so you will need to set this parameter back if you want to switch between the gimbals. Gremsy shows an option to set the PE to 912600, but best we can tell it doesn't actually save. 
+ 
+Let me know if this works on your side, thanks for your patience!
+ 
+Nate Kuczun 
+ 
+Mini Gimbal Lead 
+Freefly Systems 
+Eric Olsen April 4, 2023 at 3:16 PM
+Hello FreeFly team, 
+
+We are very excited to hear back from you. Unfortunately, this does not resolve the problem we are experiencing. What about the pan wobble?
+
+Regarding the Freefly dovetail mount, this is correct. We already established the proper cable issue last October and passed this information along to FreeFly. 
+
+Regarding the Gremsy software, this is also correct. We have been able to communicate via mavlink to the Gremsy and established the correct baud rate. 
+
+The issue we are still experiencing is a pan wobble with the PE gimbal. Once you get tilt working on the Astro, and the PE light is purple, you'll notice the slight side to side wobble. 
+
+We are able to put the gimbal in locked mode by issuing a mavlink command to the gimbal, reducing the wobble. This is noticeable in flight and on the ground, so we know it's not just the aircraft hovering in a multiple meter area. This issue has been discussed with Gremsy, and determined we have proper balance and the best possible tuning. We have tried and tried many different tuning setups and Gremsy has assured us that we have good tuning. There seems to be a problem between FF & Auterion that allows the PE to enter a funky mode. We have reached out to Auterion about this. 
+
+Guys, this issue has tremendously hurt us. We feel we have been your testing partners when we were told this was your recommended hardware solution. We still want a healthy working relationship with FF, so please tell us what else we can do to help?
+
+Thanks, 
+Eric 
+
+Freefly Engineering April 4, 2023 at 8:39 PM
+Hi Eric, 
+ 
+Thanks for the confirmation about the system setup. 
+ 
+My apologies, I am still getting up to speed on your past work of the gremsy integration, so I missed the pan bobble issue. I've read through the ticket history, it sounds like this has been in the works for a while and we/auterion haven't gotten you a detailed look or a fix yet. I certainly understand your frustration.
+ 
+I went out an flew our pixy PE with a sigma camera on Astro and did some experimentation. I believe I encountered a pan wobbling issue similar to what you describe with certain tuning values, and I was able to change some tuning values of the gimbal and get good stabilization without pan bobbing. Here is a video describing what I did and footage from two different astro flights with different tuning. https://youtu.be/y2CbyYHRm8Y 
+ 
+Does what I'm seeing match your issue, and if so did changing the tuning improve things? 
+ 
+Hopefully this helps, if not please let me know. 
+ 
+-Nate 
+Eric Olsen April 5, 2023 at 7:44 AM
+Hi Nate, thanks for getting back to us. 
+
+Would you be willing to fly that again and share the video? This time, please allow the Astro to sit for 20 seconds at a hover, move to a new position, then another 20 second hover. 
+
+I think I saw the pan wobble in your video briefly, but the Astro moved to another position. The pan wobble is a low frequency side to side motion. 
+
+Thanks, 
+Eric 
+
+
+
+Eric Olsen April 5, 2023 at 8:57 AM
+Hi again Nate, have you seen the Skype thread with ATI, FF and Gremsy teams?
+
+Here is a video I made after tuning guidance from Gremsy that shows the pan wobble: https://www.youtube.com/watch?v=WlxKCL7-r4E
+
+A different video of locked mode so you can see the parallax against the roof and roof vent to the city behind that there is no pan wobble: https://www.youtube.com/watch?v=R-Yatc-dhow
+
+I don't think this is a tuning issue since we have demonstrated that in locked mode it looks acceptable. We still feel there is a problem within the Auterion / FF code that will be discovered when you dive deeper into this issue. It seems like the FF/ Auterion code is putting the PE in a wonky state when the mavlink heartbeat hits the PE.  
+
+Thanks, 
+Eric 
+
+
+Will Peale April 5, 2023 at 9:01 AM
+Here is a good video I shared a while back illustrating the difference between locked and follow modes: https://streamable.com/8gtvby
+
+Notice how the pan axis lazily drifts back and forth when in follow mode, and how the pan stabilization greatly improves when the gimbal is set to locked mode at 58 seconds.
+
+-Will
+
+Freefly Engineering April 5, 2023 at 9:32 AM
+Hi Eric/Will, 
+ 
+As requested I went out this morning and flew the astro + gremsy PE setup again. Here is the video, I didn't see any pan issue and I had mavlink control on during the flight.  https://www.youtube.com/watch?v=yzLgP2kdjPs 
+ 
+It sounds like the issue your having is a pan oscillation with a period of 2-5 seconds, rather than the higher frequency jitter seen in the latest video from Will above. This this correct? 
+ 
+A few things I would recommend trying: 
+Turn off the pan speed on the mavlink tab of the gimbal config, see if this improves 
+Open up the pan window on the gimbal. Astro can drift in yaw by a few degrees and I'm wondering if the gimbal is hitting the edge of the pan window. In my test, under Follow I had pan window at 15, smooth at 50 and speed at 100 
+ 
+-Nate 
+Eric Olsen April 5, 2023 at 10:40 AM
+Thanks, Nate. 
+
+I can see the pan problem on the last video you shared. Look at the parallax, or sides of the frame. It also looks like your pan drifts, or the Astro drifts to the left, or upside down right?. ;o)  You can see that, right?
+
+In Will's video, the wobble can be seen up until he puts the gimbal into locked mode at 58 seconds. This proves that this gimbal is capable of performing well on the Astro, but only when we send a mavlink command to lock it. It also proves we have it tuned correctly. There is for sure a deeper issue, likely within Auterion code, and that is what we need your help with. 
+
+
+Freefly Engineering April 5, 2023 at 7:18 PM
+Hey Eric,
+ 
+I can see a little of translation in the footage I sent you (i'll flip it around next time, I set this camera up very quickly after work) and a small drift in pan as the gimbal follows the aircraft, but it doesn't really match up with your footage, at least in terms of magnitude.
+ 
+Anyways, I think what is happening is that the aircraft is moving a few degrees back and forth in yaw every 2-5s or so. The gimbal is tracking the aircraft heading through the pan head position controlled by the follow mode, and this results in the pan oscillating in your tests.
+ 
+I did some more digging and found some interesting things on the gremsy side:
+If I set the pan speed/smooth in follow to 0, the gimbal doesn't respond to any pan input from changing the pan head position or if I rotate the drone, with mavlink on
+If turn the pan speed/smooth in follow to non-zero values, the gimbal follows the pan head position as expected. If I rotate the drone but keep the gimbal pan head stationary relative to the earth, the gimbal doesn't pan, so mavlink heading commands aren't messing up the gimbal pan position
+Under mode --> settings, I would suggest REDUCE DRIFT by DRONE is off. This seems to turn on an additional centering force separate from FOLLOW mode and MAVLINK mode
+The window feature in the follow mode doesn't appear to work with mavlink on or off. I can set it to its maximum (50) and it makes no difference on how the gimbal reacts to changes in the pan head position. This is my hunch for why you are seeing these pan issues. If the gimbal respected a window limit (for example +/- 5 degrees) on follow commands then the small yaw changes of the aircraft won't show up in the gimbal/footage, but when you steer astro around the gimbal will still follow.
+Here is a video showing these things: https://youtu.be/DhW5gqEGkwQ 
+ 
+Two things I would like you to try:
+When you are sending the command to lock the gimbal, does it respond to any pan inputs at all (moving the aircraft or the gimbal head). I can't get my gimbal to go into lock mode to try it myself
+Please fly the gimbal with mavlink disabled and follow mode in pan on. Do you still see the issue?
+ 
+-Nate 
+Raffaele Rossi April 6, 2023 at 2:46 AM Internal note
+Hi Nate,
+ 
+Please let me know if there is anything we should do on our side.
+ 
+Thanks!
+Raffaele
+Eric Olsen April 6, 2023 at 11:37 AM
+Hi Nate, thanks for your reply and staying late to work on this. 
+
+The demonstration you did with the long smart dovetail cable is a good idea. We agree that Mavlink commands are not affecting the heading. Instead we think the Mavlink from the Astro prevents the PE from performing well.
+ 
+Regarding the magnitude of wobble, you are correct. The camera you are using seems to have a wider field of view than what we are using, which minimizes the pan wobble, but still visible in your video. Our new EOIR and low-light cameras have a 40X optical zoom, so the Astro configuration won't support them as is.
+
+You are also correct about the Astro moving a few degrees back and forth in yaw every 2-5 seconds. The Astro is probably the worst enterprise-level aircraft at holding position. We agree with what you said about the Astro not being perfect in your video. This is certainly a large contributing factor to the wobble, but we have reduced it by triggering locked mode to an acceptable level. Are you able to test the PE on the X?
+
+Regarding your first request, you saw Will's video at :58 seconds. The gimbal responds very well to the Astro panning in locked mode. When we first put the Astro in locked mode before Will's video, Quinton on my team landed the Astro and carried it inside, powered on and disarmed. Through the doors of the building, carried up stairs, around corners, all while the gimbal was truly locked in heading and orientation. We were both impressed with how well the PE performed, and this observation is what led us to believe that acceptable stabilization quality might actually be possible.
+
+As for your second request, we were heavily working on this 6 months ago, and it's not fresh on my mind. FF/Auterion should have an engineer who can help you get the gimbal in locked mode with a Mavlink call, like we have done so you can test on your end. This will be important to your investigation.
+
+Regarding the pan window, we have also observed and explored this. With the consideration of triggering locked mode, we have demonstrated that the pan window holds well, even with the Astro's large pan movements. This is why we believe there is some code issue, where the gimbal gets placed in an unusable mode by FF/Auterion.
+
+Certainly, the gimbal can hold heading, window, and orientation at an acceptable level even on the Astro when we force it to. There is an unknown issue within FF/Auterion that blocks the PE from working as it should. This problem likely exists within the FF/Auterion code that we cannot access. I suggest that engineers from FF and Auterion get together and troubleshoot why this is happening. There seems to be a lack of command from FF/Auterion to put the gimbal into a useful mode when there are no inputs from the pilot. Maybe the FF/Auterion Mavlink heartbeat prevents the pan window feature from working? 
+
+Freefly Engineering April 7, 2023 at 8:03 AM
+Hey Eric,
+ 
+In terms of astro's yaw holding, I think the pan window on the gimbal is causing more of a problem than Astro's small yaw motions. However, we are working to improve the yaw holding performance and there is a firmware update in that is in the works to tighten up heading hold and 3d position hold. I think this will improve things but isn't the root cause of your issue. If you are interested, I can send you some of the parameter changes that we are testing to see if it helps?  
+ 
+I'm confused about what you are saying "We agree that Mavlink commands are not affecting the heading. Instead we think the Mavlink from the Astro prevents the PE from performing well". Your issue is that the gremsy gimbal is panning, and you're saying that although we have shown mavlink doesn't affect the heading at all, it puts the gimbal in a mode where it does a poor job stabilizing in pan follow mode?
+If this is true, we would see a difference in the footage between mavlink turned on and turned off. I did two flights in follow mode, one with mavlink on and on with mavlink off, with a long lens to exaggerate the issue (didn't retune so it's slightly jittery). Here are the two flights: LINK
+The video I sent you on wednesday shows that the follow window in follow mode doesn't work regardless of whether mavlink is on or off and it sounds like that matches your testing. If the gimbal doesn't respect the window in follow mode, but does in locked mode, and you're getting acceptable performance in locked mode, it seems likely to me that if the window in follow mode worked as expected this would solve your problem. Matt has reached out to his contacts at gremsy to ask about the window in follow mode issue, and I'll keep you posted on their response.  
+ 
+Side question: pan issue aside, are you getting acceptable 40x zoom stabilization with the gremsy gimbal?  
+ 
+-Nate
+Eric Olsen April 10, 2023 at 8:29 AM
+HI Nate, I hope you had a good holiday. 
+
+Yes, please send parameter changes for the 3D and heading hold. That will massively help things on our side. If we add these changes, does that void any warranties? 
